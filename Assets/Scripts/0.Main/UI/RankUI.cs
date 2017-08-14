@@ -16,7 +16,7 @@ public class RankUI : MonoBehaviour
 
         for (int i = 0; i < 9; ++i)
         {
-            // 注册按钮事件 下载指定排行
+            // 注册按钮事件
             int index = i + 1;
             rankBtns[i].onClick.AddListener(delegate { StartCoroutine("DownloadAsnc", index); });
         }
@@ -56,8 +56,7 @@ public class RankUI : MonoBehaviour
 
                     // Debug.Log(data.id + " " + data.username + " " + data.score);
 
-                    // 显示UI
-                    // rankItemUI[index].gameObject.SetActive(true);
+                    // 更新UI
                     rankItemUI[index].UpdateUI(data.username, data.score);
                     ++index;
                 }
@@ -66,7 +65,6 @@ public class RankUI : MonoBehaviour
             // 防止排行榜数量不足
             for (int i = index; i < rankItemUI.Length; ++i)
             {
-                // rankItemUI[i].gameObject.SetActive(false);
                 rankItemUI[i].UpdateUI("未知", 0);
             }
         }

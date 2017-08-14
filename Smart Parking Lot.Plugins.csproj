@@ -99,7 +99,7 @@
     <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Materials\Wireframe.shader" />
+    <None Include="Assets\Env\Materials\Wireframe.shader" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween46.xml" />

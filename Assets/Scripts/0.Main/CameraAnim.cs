@@ -28,7 +28,7 @@ public class CameraAnim : MonoBehaviour
 
     void Update()
     {
-        if(isOk) { return; }
+        if (isOk) { return; }
 
         this.transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
 

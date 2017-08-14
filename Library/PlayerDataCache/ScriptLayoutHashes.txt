@@ -13,6 +13,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 56cc4ff161c6d1d3078635c11a722a69 Assembly-CSharp.dll:.ItemUI
+83f20b42829c0b1fc4800f90540d58ec Assembly-CSharp.dll:.CamaraDrag
 c436b5914b21b7819a4bc78b49983885 Assembly-CSharp.dll:.RankUI
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -78,6 +79,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+d4953199c4a003bfcf16ea51ceb2a322 Assembly-CSharp.dll:.Robot
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cac917711d0e84d412d48737b6fc9ae7 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 706b890efe0a474d76b40e459ddb3e76 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -111,13 +113,14 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-ef2e22417f01783d713ca003695b6cb7 Assembly-UnityScript-firstpass.dll:.Gui
 b7291cf64be53a297cdf6ff69e764858 Assembly-CSharp.dll:.LevelUI
+aae18b8d8119742aeb17025db47cc2c4 Assembly-CSharp.dll:.ItemHandler
 d0a2c1d10379b49a612a67006f1f2a38 Assembly-CSharp.dll:.House
 314c88323a6008f87e1605d17c585fb4 Assembly-CSharp.dll:.CameraAnim
 f266a453cd4bfbe81533762a3e3589f4 DOTween.dll:DG.Tweening.Core.DOTweenComponent
 0b269eddb7d77b913f99ea770bf1912a DOTween.dll:DG.Tweening.Core.DOTweenSettings
-58905bb419bd5bea443299b88828e367 Assembly-CSharp.dll:.Car
+3353921396365c84b15b2b86fea9c470 Assembly-CSharp.dll:.Car
+10736fa9db83b800dfc2fe6d76986990 Assembly-CSharp.dll:.Belt
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -133,7 +136,6 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 ca47ba5f68c110f55ab2e6e6a0b53fda Assembly-CSharp.dll:.CompleteUI
-2ba43aab147b46f7adacc9b2ae6df9d2 Assembly-UnityScript-firstpass.dll:.MouseOrbit
 8f80ba286f94e6adee8ea251c3e1b2cc Assembly-CSharp.dll:.RankItemUI
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -150,11 +152,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 a601f1f276ba09c24e8ff0de7f4daf96 Assembly-CSharp.dll:.MainUI
 3a6c36b4d403c4d4142c6e67732c782f Assembly-CSharp-firstpass.dll:DG.Tweening.DOTweenAnimation
 03f9fcc30f4170fa3e346274e21b56d2 Assembly-CSharp.dll:.SceneMgr
-28b6d89e7b9b24cad2ed42c13403ff41 Assembly-CSharp.dll:.GameManager
-f29234d4cb82d04acd8d2f3b368903c8 Assembly-CSharp.dll:.Robot
-aae18b8d8119742aeb17025db47cc2c4 Assembly-CSharp.dll:.PutDownHandler
-92cc3b5171860fe42daae5e27b125d46 Assembly-CSharp.dll:.CarMove
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Tags
-8efbaf00e1ed873b9f98030dc71381c0 Assembly-CSharp.dll:.Lift
-a45a7dc18cb33b27a1f238af7bf24714 Assembly-CSharp.dll:.TransferBelt
-83f20b42829c0b1fc4800f90540d58ec Assembly-CSharp.dll:.CamaraDrag
+2af7b8ba1c4019bdad370f539ed69fb1 Assembly-CSharp.dll:.GameManager
+a077ce44715e3bf66f3e4cbc91f5ac39 Assembly-CSharp.dll:.CarMove
+9a3f72121606e14a22a561f74e68bd71 Assembly-CSharp.dll:.Lift

@@ -11,7 +11,7 @@ public class House : MonoBehaviour
 
     void Awake()
     {
-        // 防止交界重叠
+        // 防止重叠
         length -= 1;
     }
 

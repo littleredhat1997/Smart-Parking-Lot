@@ -4343,7 +4343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDir: {x: -1, y: 0, z: 0}
   moveSpeed: 25
-  offsetSpeed: 5
 --- !u!1 &820081825
 GameObject:
   m_ObjectHideFlags: 0
@@ -7369,6 +7368,10 @@ Prefab:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a5d8de121671a694bb174dd2eafdeab1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c59add1aacad225429baba84feea87f1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5d8de121671a694bb174dd2eafdeab1, type: 3}
   m_IsPrefabParent: 0

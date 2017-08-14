@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Empty
-  - Belt
+  - Car
+  - Grid
+  - Des
   - Lift
-  - Robot
   layers:
   - Default
   - TransparentFX

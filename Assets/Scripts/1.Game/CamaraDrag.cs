@@ -19,14 +19,14 @@ public class CamaraDrag : MonoBehaviour
 
     private Transform player;
     private Vector3 offPos;
-    private bool isNeedFollow = false;
+    private bool isFollow = false;
 
     void Update()
     {
         ScrollView();
         RotateView();
 
-        if(isNeedFollow)
+        if (isFollow)
         {
             this.transform.position = player.position + offPos;
         }
@@ -49,7 +49,7 @@ public class CamaraDrag : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        if(Mathf.Abs(h) >= 0.05f || Mathf.Abs(v) >= 0.05f)
+        if (Mathf.Abs(h) >= 0.05f || Mathf.Abs(v) >= 0.05f)
         {
             float posX = this.transform.position.x + moveSpeed * h;
             float posY = this.transform.position.y;
@@ -72,17 +72,22 @@ public class CamaraDrag : MonoBehaviour
         }
     }
 
-
     // 动画结束
     public void AnimEnd()
     {
-        player = GameObject.FindGameObjectWithTag(Tags.player).transform;
+        player = GameObject.FindGameObjectWithTag(Tags.Player).transform;
         offPos = this.transform.position - player.transform.position;
+
+        // 游戏开始
+        GameManager.Instance.gameState = GameState.Start;
     }
 
-    // 镜头跟随车子移动
+    // 镜头跟随
     public void FollowPlay()
     {
-        isNeedFollow = true;
+        isFollow = true;
+
+        // 准备完毕
+        GameManager.Instance.gameState = GameState.Run;
     }
 }

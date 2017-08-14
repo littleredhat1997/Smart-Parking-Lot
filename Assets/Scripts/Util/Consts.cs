@@ -9,9 +9,9 @@
 
     // scene
     public const int Scene_Main = 0;
-    public const int Scene_Level_One = 1;
-    public const int Scene_Level_Two = 2;
-    public const int Scene_Level_Three = 3;
+    // public const int Scene_Level_One = 1;
+    // public const int Scene_Level_Two = 2;
+    // public const int Scene_Level_Three = 3;
 
     // save
     public const string Music_Volume = "MusicVolume";
@@ -21,7 +21,7 @@
     // loading
     public const string Loading_Progress = "LoadingProgress";
     public const string Loading_Bar = "LoadingBar";
-    public const string Loading_Icon = "LoadingIcon";
+    // public const string Loading_Icon = "LoadingIcon";
 
     // audio
     public const string Audio_Click = "click";
@@ -30,28 +30,21 @@
     public const string Audio_Over = "over";
 
     // score
-    public const int Score_Belt = 50;
-    public const int Score_Lift = 80;
-    public const int Score_Robot_1 = 10;
-    public const int Score_Robot_3 = 30;
+    /// <summary>
+    /// null    0
+    /// belt    50
+    /// lift    80
+    /// robot_1 10
+    /// robot_3 30
+    /// </summary>
+    public static int[] Score = { 0, 50, 80, 10, 30 };
 
-    // level one
-    public const int Level_One_Belt = 2;
-    public const int Level_One_Lift = 0;
-    public const int Level_One_Robot_1 = 0;
-    public const int Level_One_Robot_3 = 3;
-
-    // level two
-    public const int Level_Two_Belt = 4;
-    public const int Level_Two_Lift = 0;
-    public const int Level_Two_Robot_1 = 2;
-    public const int Level_Two_Robot_3 = 4;
-
-    // level three
-    public const int Level_Three_Belt = 2;
-    public const int Level_Three_Lift = 1;
-    public const int Level_Three_Robot_1 = 3;
-    public const int Level_Three_Robot_3 = 4;
-
-    // other...
+    // level
+    /// <summary>
+    /// belt    0   2   4   2
+    /// lift    0   0   0   1
+    /// robot_1 0   0   2   3
+    /// robot_3 0   3   4   4
+    /// </summary>
+    public static int[,] Level = { { 0, 0, 0, 0 }, { 2, 0, 0, 3 }, { 4, 0, 2, 4 }, { 2, 1, 3, 4 } };
 }

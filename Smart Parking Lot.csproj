@@ -94,9 +94,6 @@
     <Reference Include="DOTweenPro">
       <HintPath>Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-UnityScript-firstpass">
-      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Smart Parking Lot.Plugins.csproj">
@@ -115,10 +112,10 @@
     <Compile Include="Assets\Scripts\1.Game\CamaraDrag.cs" />
     <Compile Include="Assets\Scripts\1.Game\CarMove.cs" />
     <Compile Include="Assets\Scripts\1.Game\GameManager.cs" />
-    <Compile Include="Assets\Scripts\1.Game\Lift.cs" />
-    <Compile Include="Assets\Scripts\1.Game\PutDownHandler.cs" />
-    <Compile Include="Assets\Scripts\1.Game\Robot.cs" />
-    <Compile Include="Assets\Scripts\1.Game\TransferBelt.cs" />
+    <Compile Include="Assets\Scripts\1.Game\Item\Belt.cs" />
+    <Compile Include="Assets\Scripts\1.Game\Item\Lift.cs" />
+    <Compile Include="Assets\Scripts\1.Game\Item\Robot.cs" />
+    <Compile Include="Assets\Scripts\1.Game\ItemHandler.cs" />
     <Compile Include="Assets\Scripts\1.Game\UI\CompleteUI.cs" />
     <Compile Include="Assets\Scripts\1.Game\UI\ItemUI.cs" />
     <Compile Include="Assets\Scripts\1.Game\UI\SettingUI.cs" />
@@ -132,7 +129,7 @@
     <Compile Include="Assets\Scripts\Util\Tags.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Materials\Wireframe.shader" />
+    <None Include="Assets\Env\Materials\Wireframe.shader" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween46.xml" />
