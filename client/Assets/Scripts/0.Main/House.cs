@@ -20,18 +20,18 @@ public class House : MonoBehaviour
         // 随机数量
         int randomNum = Random.Range(1, num);
         int perLength = length / randomNum;
-        for (int i = 0; i < randomNum; ++i)
+        for (int i = 0; i < randomNum; i++)
         {
-            // 随机位置
+            // 随机坐标
             int randomX = Random.Range(i * perLength, (i + 1) * perLength) - (length / 2);
 
-            // 随机颜色
-            int randomColor = Random.Range(0, houses.Length);
+            // 随机房子
+            int randomHouse = Random.Range(0, houses.Length);
 
             // 生成房子
-            GameObject house = Instantiate(houses[randomColor]);
+            GameObject house = Instantiate(houses[randomHouse]);
             house.transform.SetParent(this.transform);
-            house.transform.localPosition = new Vector3(randomX, 0, -4);
+            house.transform.localPosition = new Vector3(randomX, 0, -4f);
             house.transform.localEulerAngles = Vector3.zero;
             house.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
         }

@@ -8,30 +8,32 @@ public class LevelUI : MonoBehaviour
     [Header("按钮列表")]
     public Button[] levelBtns;
 
-    void OnEnable()
+    public void InitLevel(int selectChapter)
     {
-        int maxLevel = PlayerPrefs.GetInt(Consts.Max_Level);
+        // 第一关卡
+        int from = 1; for (int i = 0; i < selectChapter; i++) { from += Consts.Chapter[i]; }
+        // 当前章节最大关卡
+        int maxLevel = Consts.Chapter[selectChapter];
 
-        // 目前已开发的关卡
-        maxLevel = Mathf.Min(maxLevel, Consts.MAXLEVEL - 1);
-
-        for (int i = 0; i <= maxLevel; ++i)
+        for (int i = 0; i < maxLevel; i++)
         {
             // 注册按钮事件
-            int index = i + 1;
+            int index = from + i;
+            levelBtns[i].enabled = true;
             levelBtns[i].onClick.AddListener(delegate { LoadScene(index); });
         }
-        for (int i = maxLevel + 1; i < levelImgs.Length; ++i)
+        for (int i = maxLevel; i < levelImgs.Length; i++)
         {
             // 设置关卡精灵
-            levelImgs[i].sprite = Resources.Load("level_lock", new Sprite().GetType()) as Sprite;
+            levelBtns[i].enabled = false;
+            levelImgs[i].sprite = Resources.Load("sprite/level_lock", new Sprite().GetType()) as Sprite;
         }
     }
 
     void LoadScene(int index)
     {
         // 镜头停止
-        GameObject.FindGameObjectWithTag(Tags.MainCamera).GetComponent<CameraAnim>().isOk = true;
+        GameObject.FindGameObjectWithTag(Consts.MainCamera).GetComponent<CameraAnim>().isOk = true;
 
         Globals.Instance.level = index;
         SceneMgr.Instance.LoadSceneAsnc(index);

@@ -13,23 +13,26 @@ public class Lift : MonoBehaviour
 
     private Transform car;
     private CarMove carMove;
+    private bool isPlay = false;
 
     void Start()
     {
         originPos = transform.position;
 
-        car = GameObject.FindGameObjectWithTag(Tags.Player).transform;
+        car = GameObject.FindGameObjectWithTag(Consts.Player).transform;
         carMove = car.GetComponent<CarMove>();
     }
 
     void OnTriggerStay(Collider other)
     {
+        if (!isPlay) { AudioMgr.Instance.PlayEffect(Consts.Audio_Lift); isPlay = true; }
+
         float distance = transform.position.y - originPos.y;
         if (Mathf.Abs(distance) >= movDistance) { return; }
 
         if (!carMove.isFirstStep)
         {
-            if (other.tag == Tags.Player)
+            if (other.tag == Consts.Player)
             {
                 transform.Translate(dir * liftSpeed * Time.deltaTime);
                 car.position = transform.position + new Vector3(0, 0.05f, 0);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public enum ItemType
@@ -10,13 +11,25 @@ public enum ItemType
     Robot_3
 }
 
+public class Item
+{
+    public GameObject itemGo;
+    public ItemType itemType;
+
+    public Item(GameObject itemGo, ItemType itemType)
+    {
+        this.itemGo = itemGo;
+        this.itemType = itemType;
+    }
+}
+
 public class ItemHandler : GameSingleton<ItemHandler>
 {
     [Header("一格预设")]
     public GameObject greenGridPrefab_1;
-    [Header("三格预设")]
+    [Header("二格预设")]
     public GameObject greenGridPrefab_3;
-    [Header("五格预设")]
+    [Header("三格预设")]
     public GameObject greenGridPrefab_5;
 
     [Header("传送带")]
@@ -39,6 +52,11 @@ public class ItemHandler : GameSingleton<ItemHandler>
     private GameObject itemPrefab = null;
     // 格子预设
     private GameObject gridPrefab = null;
+
+    /// <summary>
+    /// 已放置道具栈
+    /// </summary>
+    private Stack<Item> itemStack = new Stack<Item>();
 
     /// <summary>
     /// 最后一个道具
@@ -72,14 +90,17 @@ public class ItemHandler : GameSingleton<ItemHandler>
         // ESC取消放置
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (itemGo != null)
-            {
-                Destroy(itemGo);
-                GameManager.Instance.RenewItem(lastType);
-            }
+            // 检查栈是否为空
+            if (itemStack.Count == 0) { return; }
+
+            // 弹出栈顶
+            Item i = itemStack.Pop();
+            Destroy(i.itemGo);
+            GameManager.Instance.RenewItem(i.itemType);
+
             lastType = ItemType.NULL;
             lastPos = new Vector3(100, 100, 100);
-            mouseOriginPos = Vector3.zero; ;
+            mouseOriginPos = Vector3.zero;
         }
 
         // 游戏进行中且鼠标不在UI控件上
@@ -105,7 +126,7 @@ public class ItemHandler : GameSingleton<ItemHandler>
         RaycastHit info;
         if (Physics.Raycast(ray, out info))
         {
-            if (info.collider.tag == Tags.Grid)
+            if (info.collider.tag == Consts.Grid)
             {
                 // 是否首次放置
                 if (isCanEnter)
@@ -134,8 +155,16 @@ public class ItemHandler : GameSingleton<ItemHandler>
                     itemGo = Instantiate(itemPrefab, gridGo.transform.position, gridGo.transform.rotation);
                     // 无视射线
                     itemGo.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    // 播放音效
+                    AudioMgr.Instance.PlayEffect(Consts.Audio_Put);
+                    // 播放特效
+                    GameObject effect = Instantiate(Resources.Load(Consts.Effect_Put) as GameObject);
+                    effect.transform.position = itemGo.transform.position;
                     // 销毁格子
                     Destroy(gridGo);
+
+                    // 压入栈顶
+                    itemStack.Push(new Item(itemGo, itemType));
 
                     // 最后一个道具
                     lastType = itemType;

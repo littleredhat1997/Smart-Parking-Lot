@@ -14,7 +14,7 @@ public class RankUI : MonoBehaviour
     {
         StartCoroutine("DownloadAsnc", 1);
 
-        for (int i = 0; i < 9; ++i)
+        for (int i = 0; i < 9; i++)
         {
             // 注册按钮事件
             int index = i + 1;

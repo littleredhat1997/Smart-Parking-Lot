@@ -29,10 +29,23 @@ public class GameManager : GameSingleton<GameManager>
     public GameObject scorePanel;
     [Header("Item界面")]
     public GameObject itemPanel;
-    [Header("GameWin界面")]
+    [Header("游戏胜利界面")]
     public GameObject gameWinPanel;
-    [Header("GameOver界面")]
+    [Header("游戏结束界面")]
     public GameObject gameOverPanel;
+
+    private Transform _carTrans;
+    public Transform carTrans
+    {
+        get
+        {
+            if (_carTrans == null)
+            {
+                _carTrans = GameObject.FindGameObjectWithTag(Consts.Player).transform;
+            }
+            return _carTrans;
+        }
+    }
 
     private int _score;
     public int score
@@ -108,9 +121,10 @@ public class GameManager : GameSingleton<GameManager>
         switch (gameState)
         {
             case GameState.Ready:
+
+                // NONE
                 Debug.Log("GameState.Ready");
 
-                Time.timeScale = 1;
                 break;
             case GameState.Start:
                 Debug.Log("GameState.Start");
@@ -130,8 +144,11 @@ public class GameManager : GameSingleton<GameManager>
                 Debug.Log("GameState.GameWin");
                 gameState = GameState.End;
 
-                Time.timeScale = 0;
                 gameWinPanel.SetActive(true);
+
+                // 生成胜利特效
+                GameObject winEffect = Instantiate(Resources.Load(Consts.Effect_Win) as GameObject);
+                winEffect.transform.position = carTrans.position;
 
                 // 播放胜利音效
                 AudioMgr.Instance.PlayEffect(Consts.Audio_Win);
@@ -151,8 +168,11 @@ public class GameManager : GameSingleton<GameManager>
                 Debug.Log("GameState.GameOver");
                 gameState = GameState.End;
 
-                Time.timeScale = 0;
                 gameOverPanel.SetActive(true);
+
+                // 生成失败特效
+                GameObject overEffect = Instantiate(Resources.Load(Consts.Effect_Over) as GameObject);
+                overEffect.transform.position = carTrans.position + new Vector3(0, 5, 0);
 
                 // 播放失败音效
                 AudioMgr.Instance.PlayEffect(Consts.Audio_Over);

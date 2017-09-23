@@ -12,6 +12,10 @@ public class MainUI : MonoBehaviour
 
     [Header("开始按钮")]
     public Button startBtn;
+    [Header("章节关闭按钮")]
+    public Button chapterClose;
+    [Header("章节面板")]
+    public GameObject chapterPanel;
     [Header("关卡关闭按钮")]
     public Button levelClose;
     [Header("关卡面板")]
@@ -44,6 +48,7 @@ public class MainUI : MonoBehaviour
         // 注册按钮事件
         confirmBtn.onClick.AddListener(delegate { OnConfirmBtnClick(); });
         startBtn.onClick.AddListener(delegate { OnStartBtnClick(); });
+        chapterClose.onClick.AddListener(delegate { OnChapterCloseBtnClick(); });
         levelClose.onClick.AddListener(delegate { OnLevelCloseClick(); });
         rankBtn.onClick.AddListener(delegate { OnRankBtnClick(); });
         rankClose.onClick.AddListener(delegate { OnRankCloseClick(); });
@@ -86,7 +91,13 @@ public class MainUI : MonoBehaviour
     /// </summary>
     void OnStartBtnClick()
     {
-        levelPanel.SetActive(true);
+        chapterPanel.SetActive(true);
+        AudioMgr.Instance.PlayEffect(Consts.Audio_Click);
+    }
+
+    void OnChapterCloseBtnClick()
+    {
+        chapterPanel.SetActive(false);
         AudioMgr.Instance.PlayEffect(Consts.Audio_Click);
     }
 

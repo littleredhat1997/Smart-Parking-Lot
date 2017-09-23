@@ -45,6 +45,11 @@ public class CarMove : MonoBehaviour
         }
         else
         {
+            // 生成移动特效
+            GameObject carEffect = Instantiate(Resources.Load(Consts.Effect_Car) as GameObject);
+            carEffect.transform.SetParent(this.transform);
+            carEffect.transform.localPosition = Vector3.zero + new Vector3(0, 50, 0);
+
             isFirstStep = false;
         }
     }
@@ -57,7 +62,7 @@ public class CarMove : MonoBehaviour
         if (Physics.Raycast(ray, out hitinfo))
         {
             // 格子
-            if (hitinfo.collider.tag == Tags.Grid)
+            if (hitinfo.collider.tag == Consts.Grid)
             {
                 timer += Time.deltaTime;
                 if (timer > 3.0f)
@@ -66,8 +71,13 @@ public class CarMove : MonoBehaviour
                     GameManager.Instance.gameState = GameState.GameOver;
                 }
             }
+            else
+            {
+                timer = 0;
+            }
+
             // 终点
-            if (hitinfo.collider.tag == Tags.Des)
+            if (hitinfo.collider.tag == Consts.Des)
             {
                 Debug.Log("GameWin");
                 GameManager.Instance.gameState = GameState.GameWin;
@@ -85,7 +95,7 @@ public class CarMove : MonoBehaviour
         timer = 0;
 
         // 障碍
-        if (other.tag == Tags.Car)
+        if (other.tag == Consts.Car)
         {
             Debug.Log("GameOver");
             GameManager.Instance.gameState = GameState.GameOver;

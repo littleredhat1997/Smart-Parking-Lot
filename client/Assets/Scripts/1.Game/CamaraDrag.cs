@@ -40,7 +40,7 @@ public class CamaraDrag : MonoBehaviour
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
 
         // 改变镜头大小
-        transform.position = this.transform.position.normalized * distance;
+        this.transform.position = this.transform.position.normalized * distance;
     }
 
     void RotateView()
@@ -51,9 +51,11 @@ public class CamaraDrag : MonoBehaviour
 
         if (Mathf.Abs(h) >= 0.05f || Mathf.Abs(v) >= 0.05f)
         {
-            float posX = this.transform.position.x + moveSpeed * h;
             float posY = this.transform.position.y;
-            float posZ = this.transform.position.z + moveSpeed * v;
+            this.transform.Translate(new Vector3(h, 0, v) * moveSpeed);
+
+            float posX = this.transform.position.x;
+            float posZ = this.transform.position.z;
 
             posX = Mathf.Clamp(posX, -maxX, maxX);
             posZ = Mathf.Clamp(posZ, -maxZ, maxZ);
@@ -75,7 +77,7 @@ public class CamaraDrag : MonoBehaviour
     // 动画结束
     public void AnimEnd()
     {
-        player = GameObject.FindGameObjectWithTag(Tags.Player).transform;
+        player = GameManager.Instance.carTrans;
         offPos = this.transform.position - player.transform.position;
 
         // 游戏开始

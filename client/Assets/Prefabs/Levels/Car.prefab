@@ -53,7 +53,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628462312270966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797798739434006}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.6, y: 0, z: -7.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4397315076763440}
@@ -138,7 +138,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 40, z: 100}
+  m_Size: {x: 60, y: 40, z: 100}
   m_Center: {x: 0, y: 10, z: 0}
 --- !u!65 &65894590733225384
 BoxCollider:
@@ -150,7 +150,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 50, z: 100}
+  m_Size: {x: 60, y: 50, z: 100}
   m_Center: {x: 0, y: 20, z: 0}
 --- !u!114 &114175449749080704
 MonoBehaviour:
@@ -164,5 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSpeed: 1
-  isFirstStep: 1
+  isGround: 0
+  isStart: 0
+  isFirstArrive: 0
   isMoving: 0

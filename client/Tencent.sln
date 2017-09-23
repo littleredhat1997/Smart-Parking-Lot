@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tencent", "Tencent.csproj", "{68E9D5B3-2567-EE74-6446-19BAE147BC0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tencent.Plugins", "Tencent.Plugins.csproj", "{5DFCD4EA-6078-0991-D32C-C49408A9AE29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tencent.Editor.Plugins", "Tencent.Editor.Plugins.csproj", "{36322C8B-DB0A-08D4-6BFE-E3FA37A259B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68E9D5B3-2567-EE74-6446-19BAE147BC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E9D5B3-2567-EE74-6446-19BAE147BC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E9D5B3-2567-EE74-6446-19BAE147BC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E9D5B3-2567-EE74-6446-19BAE147BC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DFCD4EA-6078-0991-D32C-C49408A9AE29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFCD4EA-6078-0991-D32C-C49408A9AE29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DFCD4EA-6078-0991-D32C-C49408A9AE29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DFCD4EA-6078-0991-D32C-C49408A9AE29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36322C8B-DB0A-08D4-6BFE-E3FA37A259B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36322C8B-DB0A-08D4-6BFE-E3FA37A259B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36322C8B-DB0A-08D4-6BFE-E3FA37A259B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36322C8B-DB0A-08D4-6BFE-E3FA37A259B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

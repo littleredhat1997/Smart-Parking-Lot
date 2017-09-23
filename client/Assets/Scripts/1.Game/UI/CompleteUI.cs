@@ -5,9 +5,9 @@ public class CompleteUI : MonoBehaviour
 {
     [Header("分数文本")]
     public Text scoreText;
-    [Header("Win返回按钮")]
+    [Header("游戏胜利返回按钮")]
     public Button winBackBtn;
-    [Header("Over返回按钮")]
+    [Header("游戏结束返回按钮")]
     public Button overBackBtn;
 
     void Start()
