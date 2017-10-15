@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart Parking Lot", "Smart Parking Lot.csproj", "{BEBAAE2E-562C-2357-DB16-C0A5D421EB88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart Parking Lot.Plugins", "Smart Parking Lot.Plugins.csproj", "{09DB0F01-2203-4EF2-27AC-23C7E0881BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart Parking Lot.Editor.Plugins", "Smart Parking Lot.Editor.Plugins.csproj", "{309B0E60-619E-0822-A5E0-ACD08503E848}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEBAAE2E-562C-2357-DB16-C0A5D421EB88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBAAE2E-562C-2357-DB16-C0A5D421EB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBAAE2E-562C-2357-DB16-C0A5D421EB88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBAAE2E-562C-2357-DB16-C0A5D421EB88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09DB0F01-2203-4EF2-27AC-23C7E0881BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DB0F01-2203-4EF2-27AC-23C7E0881BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DB0F01-2203-4EF2-27AC-23C7E0881BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DB0F01-2203-4EF2-27AC-23C7E0881BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309B0E60-619E-0822-A5E0-ACD08503E848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309B0E60-619E-0822-A5E0-ACD08503E848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309B0E60-619E-0822-A5E0-ACD08503E848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309B0E60-619E-0822-A5E0-ACD08503E848}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
